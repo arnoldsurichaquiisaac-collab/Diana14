@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Para Diana, el amor de mi vida ❤️</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at top, #263b63 0%, transparent 35%),
+                linear-gradient(135deg, #071426, #102746, #172f52);
+            font-family: Georgia, serif;
+            text-align: center;
+            color: white;
+            padding: 60px 20px;
+            overflow-x: hidden;
+            position: relative;
+            cursor: none;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+            color: #ffffff;
+            text-shadow:
+                0 0 10px #ffffff,
+                0 0 20px #8fa8c7,
+                0 0 35px #526d91;
+        }
+
+        .subtitulo {
+            font-size: 21px;
+            color: #dce8f7;
+            margin-bottom: 35px;
+            letter-spacing: 1px;
+        }
+
+        .poema {
+            position: relative;
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.09);
+            border: 1px solid rgba(220, 230, 245, 0.35);
+            padding: 40px 30px;
+            border-radius: 30px;
+            max-width: 760px;
+            margin: auto;
+
+            box-shadow:
+                0 0 20px rgba(255,255,255,0.10),
+                0 0 45px rgba(52, 89, 130, 0.35),
+                inset 0 0 30px rgba(255,255,255,0.04);
+
+            backdrop-filter: blur(8px);
+        }
+
+        .nombre {
+            font-size: 32px;
+            color: #d9e5f5;
+            margin-bottom: 30px;
+
+            text-shadow:
+                0 0 8px #ffffff,
+                0 0 18px #8199b8;
+        }
+
+        p {
+            font-size: 20px;
+            line-height: 1.9;
+            color: #f4f7fb;
+            margin: 28px 0;
+        }
+
+        .frase-final {
+            font-size: 27px;
+            line-height: 1.7;
+            color: #ffffff;
+
+            text-shadow:
+                0 0 8px #ffffff,
+                0 0 18px #9db3cf,
+                0 0 30px #607da2;
+        }
+
+        /* Corazones principales */
+
+        .corazon {
+            font-size: 65px;
+            display: inline-block;
+            animation: latido 1.4s infinite ease-in-out;
+        }
+
+        .azul {
+            color: #123c72;
+            text-shadow:
+                0 0 5px #6fa9ff,
+                0 0 12px #347bd1,
+                0 0 25px #1e5fae,
+                0 0 40px #0b3d78;
+        }
+
+        .plata {
+            color: #e9eef5;
+            text-shadow:
+                0 0 5px #ffffff,
+                0 0 12px #ffffff,
+                0 0 25px #c8d1dc,
+                0 0 40px #ffffff;
+        }
+
+        @keyframes latido {
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.18);
+            }
+        }
+
+        /* Corazones flotantes de fondo */
+
+        .corazones {
+            position: fixed;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .flotante {
+            position: absolute;
+            bottom: -80px;
+            font-size: 28px;
+            animation: subir linear infinite;
+            opacity: 0;
+        }
+
+        .azul-flotante {
+            color: #164b87;
+            text-shadow:
+                0 0 6px #8fc2ff,
+                0 0 14px #438ee0,
+                0 0 25px #1d5fa8;
+        }
+
+        .plata-flotante {
+            color: #f1f4f8;
+            text-shadow:
+                0 0 5px #ffffff,
+                0 0 12px #ffffff,
+                0 0 22px #dce5ee;
+        }
+
+        @keyframes subir {
+            0% {
+                transform: translateY(0) rotate(0deg) scale(0.8);
+                opacity: 0;
+            }
+
+            15% {
+                opacity: 1;
+            }
+
+            50% {
+                transform: translateY(-50vh) rotate(20deg) scale(1);
+            }
+
+            100% {
+                transform: translateY(-115vh) rotate(-20deg) scale(1.2);
+                opacity: 0;
+            }
+        }
+
+        /* Diferentes posiciones y velocidades */
+
+        .h1 { left: 5%; animation-duration: 10s; animation-delay: 1s; }
+        .h2 { left: 15%; animation-duration: 13s; animation-delay: 4s; }
+        .h3 { left: 27%; animation-duration: 9s; animation-delay: 2s; }
+        .h4 { left: 39%; animation-duration: 14s; animation-delay: 6s; }
+        .h5 { left: 52%; animation-duration: 11s; animation-delay: 3s; }
+        .h6 { left: 64%; animation-duration: 15s; animation-delay: 1s; }
+        .h7 { left: 76%; animation-duration: 10s; animation-delay: 5s; }
+        .h8 { left: 88%; animation-duration: 12s; animation-delay: 7s; }
+
+        /* Brillitos fijos */
+
+        .estrella {
+            position: absolute;
+            color: white;
+            font-size: 12px;
+            animation: brillo 2s infinite alternate;
+            text-shadow:
+                0 0 5px white,
+                0 0 12px #cbd8e8;
+        }
+
+        @keyframes brillo {
+            from {
+                opacity: 0.2;
+                transform: scale(0.7);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1.5);
+            }
+        }
+
+        .e1 { top: 12%; left: 10%; }
+        .e2 { top: 20%; left: 85%; animation-delay: .5s; }
+        .e3 { top: 70%; left: 8%; animation-delay: 1s; }
+        .e4 { top: 80%; left: 90%; animation-delay: 1.5s; }
+        .e5 { top: 45%; left: 94%; animation-delay: .8s; }
+        .e6 { top: 35%; left: 4%; animation-delay: 1.2s; }
+
+        .firma {
+            margin-top: 35px;
+            font-size: 18px;
+            color: #bfcde0;
+            font-style: italic;
+        }
+
+        /* ===== Capa interactiva: corazones y brillos que reaccionan al mouse/toque ===== */
+
+        .capa-interactiva {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9999;
+            overflow: hidden;
+        }
+
+        .corazon-cursor {
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 20px;
+            transform: translate(-50%, -50%);
+            will-change: transform, opacity;
+            filter: drop-shadow(0 0 6px rgba(255,255,255,0.7));
+        }
+
+        .chispa-cursor {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #ffffff;
+            box-shadow: 0 0 8px #ffffff, 0 0 16px #9db3cf;
+            transform: translate(-50%, -50%);
+            will-change: transform, opacity;
+        }
+
+        /* Puntero personalizado en forma de corazón (solo desktop) */
+        .puntero-corazon {
+            position: fixed;
+            top: 0;
+            left: 0;
+            font-size: 22px;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 10000;
+            animation: latido 1.4s infinite ease-in-out;
+            filter: drop-shadow(0 0 6px rgba(150,190,255,0.9));
+            display: none;
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+            .puntero-corazon {
+                display: block;
+            }
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 36px;
+            }
+
+            .nombre {
+                font-size: 26px;
+            }
+
+            p {
+                font-size: 18px;
+            }
+
+            .poema {
+                padding: 30px 20px;
+            }
+
+            body {
+                cursor: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Corazones flotando de fondo -->
+    <div class="corazones">
+
+        <div class="flotante azul-flotante h1">♥</div>
+        <div class="flotante plata-flotante h2">♥</div>
+        <div class="flotante azul-flotante h3">♥</div>
+        <div class="flotante plata-flotante h4">♥</div>
+        <div class="flotante azul-flotante h5">♥</div>
+        <div class="flotante plata-flotante h6">♥</div>
+        <div class="flotante azul-flotante h7">♥</div>
+        <div class="flotante plata-flotante h8">♥</div>
+
+        <!-- Destellos -->
+        <span class="estrella e1">✦</span>
+        <span class="estrella e2">✧</span>
+        <span class="estrella e3">✦</span>
+        <span class="estrella e4">✧</span>
+        <span class="estrella e5">✦</span>
+        <span class="estrella e6">✧</span>
+
+    </div>
+
+    <!-- Capa donde nacen los corazones/brillos interactivos -->
+    <div class="capa-interactiva" id="capaInteractiva"></div>
+
+    <!-- Puntero en forma de corazón -->
+    <div class="puntero-corazon" id="punteroCorazon">♥</div>
+
+    <h1>Para el amor de mi vida ❤️</h1>
+
+    <div class="subtitulo">
+        Un pedacito de mi corazón escrito para ti...
+    </div>
+
+    <div class="poema">
+
+        <div class="corazon azul">♥</div>
+        <div class="corazon plata">♥</div>
+
+        <h2 class="nombre">
+            Diana Evelyn Martinez Villegas
+        </h2>
+
+        <p>
+            Diana, desde que llegaste a mi vida,<br>
+            algo dentro de mí comenzó a cambiar,<br>
+            como si el destino hubiera escrito tu nombre<br>
+            en el lugar donde siempre te iba a encontrar.
+        </p>
+
+        <p>
+            Eres ese pensamiento bonito<br>
+            que aparece sin pedir permiso,<br>
+            la razón de tantas sonrisas,<br>
+            mi calma, mi ilusión y mi paraíso.
+        </p>
+
+        <p>
+            Cuando miro tus ojos<br>
+            encuentro un cielo diferente,<br>
+            uno donde quiero perderme<br>
+            y quedarme para siempre.
+        </p>
+
+        <p>
+            Si pudiera regalarte las estrellas,<br>
+            escogería las que más brillan,<br>
+            porque ninguna sería suficiente<br>
+            para compararse con la luz de tu sonrisa.
+        </p>
+
+        <p>
+            Quiero estar contigo en los días felices,<br>
+            abrazarte cuando llegue la tristeza,<br>
+            celebrar cada uno de tus sueños<br>
+            y caminar contigo hacia cada nueva meta.
+        </p>
+
+        <p>
+            No te prometo una vida perfecta,<br>
+            pero sí un corazón que quiera cuidarte,<br>
+            unas manos que siempre busquen las tuyas<br>
+            y un amor que nunca se canse de encontrarte.
+        </p>
+
+        <p>
+            Porque entre millones de personas,<br>
+            mi corazón eligió tu mirada,<br>
+            tu sonrisa, tu forma de ser,<br>
+            y esa manera tan tuya de hacer especial cada mañana.
+        </p>
+
+        <p>
+            Y si algún día me preguntas<br>
+            cuánto significa tu presencia en mi vida,<br>
+            solamente voy a abrazarte,<br>
+            porque hay sentimientos que las palabras<br>
+            jamás podrían explicar.
+        </p>
+
+        <h2 class="frase-final">
+            Diana... ❤️<br><br>
+
+            Eres mi presente,<br>
+            mi sueño favorito<br>
+            y ese futuro que quiero construir a tu lado.<br><br>
+
+            Te amo con todo mi corazón,<br>
+            hoy, mañana<br>
+            y en cada uno de los días<br>
+            que la vida nos permita compartir.
+        </h2>
+
+        <div class="corazon plata">♥</div>
+        <div class="corazon azul">♥</div>
+
+        <div class="firma">
+            Con todo mi amor, para ti, Diana. ❤️
+        </div>
+
+    </div>
+
+    <script>
+        (function () {
+            const capa = document.getElementById('capaInteractiva');
+            const puntero = document.getElementById('punteroCorazon');
+            const esTactil = window.matchMedia('(hover: none), (pointer: coarse)').matches;
+
+            const coloresCorazon = ['#8fc2ff', '#ffffff', '#6fa9ff', '#e9eef5'];
+
+            // Crea un corazón que aparece y se desvanece flotando hacia arriba
+            function crearCorazon(x, y, opciones) {
+                opciones = opciones || {};
+                const el = document.createElement('div');
+                el.className = 'corazon-cursor';
+                el.textContent = '♥';
+                el.style.left = x + 'px';
+                el.style.top = y + 'px';
+                el.style.color = coloresCorazon[Math.floor(Math.random() * coloresCorazon.length)];
+
+                const tam = opciones.tam || (14 + Math.random() * 16);
+                el.style.fontSize = tam + 'px';
+
+                capa.appendChild(el);
+
+                const dx = (Math.random() - 0.5) * (opciones.dispersion || 60);
+                const dy = -(40 + Math.random() * 70);
+                const rot = (Math.random() - 0.5) * 60;
+                const duracion = opciones.duracion || (900 + Math.random() * 700);
+
+                el.animate([
+                    { transform: 'translate(-50%, -50%) translate(0px, 0px) rotate(0deg) scale(0.6)', opacity: 0 },
+                    { transform: 'translate(-50%, -50%) translate(' + (dx * 0.3) + 'px, ' + (dy * 0.4) + 'px) rotate(' + (rot * 0.4) + 'deg) scale(1)', opacity: 1, offset: 0.25 },
+                    { transform: 'translate(-50%, -50%) translate(' + dx + 'px, ' + dy + 'px) rotate(' + rot + 'deg) scale(0.9)', opacity: 0 }
+                ], {
+                    duration: duracion,
+                    easing: 'ease-out'
+                }).onfinish = function () {
+                    el.remove();
+                };
+            }
+
+            // Crea una chispa/brillo pequeño
+            function crearChispa(x, y) {
+                const el = document.createElement('div');
+                el.className = 'chispa-cursor';
+                el.style.left = x + 'px';
+                el.style.top = y + 'px';
+                capa.appendChild(el);
+
+                const dx = (Math.random() - 0.5) * 40;
+                const dy = (Math.random() - 0.5) * 40;
+                const duracion = 500 + Math.random() * 400;
+
+                el.animate([
+                    { transform: 'translate(-50%, -50%) scale(0.3)', opacity: 0 },
+                    { transform: 'translate(-50%, -50%) scale(1.4)', opacity: 1, offset: 0.4 },
+                    { transform: 'translate(-50%, -50%) translate(' + dx + 'px, ' + dy + 'px) scale(0.2)', opacity: 0 }
+                ], {
+                    duration: duracion,
+                    easing: 'ease-out'
+                }).onfinish = function () {
+                    el.remove();
+                };
+            }
+
+            // ---- Movimiento del mouse: deja un rastro suave de brillos y algún corazón ----
+            let ultimoTiempo = 0;
+            let contador = 0;
+
+            function alMover(x, y) {
+                const ahora = Date.now();
+                if (ahora - ultimoTiempo < 45) return; // limita la frecuencia
+                ultimoTiempo = ahora;
+
+                crearChispa(x, y);
+
+                contador++;
+                if (contador % 4 === 0) {
+                    crearCorazon(x, y, { tam: 12 + Math.random() * 10, dispersion: 30, duracion: 900 });
+                }
+
+                if (puntero) {
+                    puntero.style.left = x + 'px';
+                    puntero.style.top = y + 'px';
+                }
+            }
+
+            // ---- Click o toque: estalla un ramillete de corazones ----
+            function alPulsar(x, y) {
+                const cantidad = 8 + Math.floor(Math.random() * 5);
+                for (let i = 0; i < cantidad; i++) {
+                    setTimeout(function () {
+                        crearCorazon(x, y, {
+                            tam: 18 + Math.random() * 22,
+                            dispersion: 120 + Math.random() * 60,
+                            duracion: 1000 + Math.random() * 600
+                        });
+                    }, i * 25);
+                }
+                for (let i = 0; i < 6; i++) {
+                    setTimeout(function () {
+                        crearChispa(x + (Math.random() - 0.5) * 30, y + (Math.random() - 0.5) * 30);
+                    }, i * 30);
+                }
+            }
+
+            if (!esTactil) {
+                window.addEventListener('mousemove', function (e) {
+                    alMover(e.clientX, e.clientY);
+                });
+
+                window.addEventListener('click', function (e) {
+                    alPulsar(e.clientX, e.clientY);
+                });
+            } else {
+                if (puntero) puntero.style.display = 'none';
+
+                window.addEventListener('touchmove', function (e) {
+                    const t = e.touches[0];
+                    if (t) alMover(t.clientX, t.clientY);
+                }, { passive: true });
+
+                window.addEventListener('touchstart', function (e) {
+                    const t = e.touches[0];
+                    if (t) {
+                        alMover(t.clientX, t.clientY);
+                        alPulsar(t.clientX, t.clientY);
+                    }
+                }, { passive: true });
+            }
+
+            // Pequeño gesto de bienvenida: un corazón suave en el centro al cargar
+            window.addEventListener('load', function () {
+                const cx = window.innerWidth / 2;
+                const cy = window.innerHeight / 2;
+                setTimeout(function () { alPulsar(cx, cy); }, 400);
+            });
+        })();
+    </script>
+
+</body>
+</html>
